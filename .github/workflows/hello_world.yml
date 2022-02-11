@@ -7,5 +7,9 @@ jobs:
   my-test:
     runs-on: ubuntu-latest
     steps:
-      - name: Howdy
-        run: echo "Hello World!"
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Make Libs
+        working-directory: ./android-bindings
+        run: |
+          make
