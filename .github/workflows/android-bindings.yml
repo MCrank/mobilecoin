@@ -1,4 +1,4 @@
-name: Hello World
+name: Publish Android Bindings
 
 on:
   workflow_dispatch:
@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Make Libs
+      - name: Build and Publish Bindings
         working-directory: ./android-bindings
         run: |
-          make
+          make publish
