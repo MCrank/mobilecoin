@@ -100,6 +100,8 @@ strip:
 build: setup
 	docker run \
 		--rm \
+		-e MAVEN_USER
+		-e MAVEN_PASSWORD
 		-v $(pwd):/home/rust/ \
 		-v $(BUILD_DEPS_FOLDER):/usr/local/cargo/git \
 		-w /home/rust/android-bindings \
