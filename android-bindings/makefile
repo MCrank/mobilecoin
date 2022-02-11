@@ -63,8 +63,7 @@ libs: $(ARCHS) strip copy_artifacts
 publish: build
 	cd lib-wrapper; \
 	./gradlew build; \
-	./gradlew publish; \
-	cd ../
+	./gradlew publish
 
 copy_artifacts:
 	mkdir -p build/jniLibs/arm64-v8a
