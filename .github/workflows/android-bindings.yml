@@ -4,12 +4,15 @@ on:
   workflow_dispatch:
 
 jobs:
-  my-test:
+  build_publish:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Build and Publish Bindings
+        env:
+          MAVEN_USER: ${{ secrets.MAVEN_USER }}
+          MAVEN_PASSWORD: ${{ secrets.MAVEN_PASSWORD }}
         working-directory: ./android-bindings
         run: |
           make publish
